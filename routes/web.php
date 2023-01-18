@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\mainController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::controller(mainController::class)->group(function(){
+    Route::get('addwriter','Writer_Add');
+    Route::get('addbook','Book_Add');
+    Route::get('bookwriter','Book_Writer');
 });
