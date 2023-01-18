@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::controller(mainController::class)->group(function(){
     Route::get('addwriter','Writer_Add');
     Route::get('addbook','Book_Add');
-    Route::get('bookwriter','Book_Writer');
+    Route::get('showbook/{id}','Show_Book');
+    Route::get('showwriter/{id}','Show_Writer');
+
+
 });
